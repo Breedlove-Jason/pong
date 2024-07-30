@@ -85,9 +85,9 @@ paddle_direction = 1
 def move_ball(ball, paddle1, paddle2):
     global direction_x, direction_y, score1, score2
     x = ball.xcor()
-    x += direction_x * 3  # Increase the speed of the ball
+    x += direction_x * 2  # Adjusted ball speed
     y = ball.ycor()
-    y += direction_y * 3  # Increase the speed of the ball
+    y += direction_y * 2  # Adjusted ball speed
     ball.goto(x, y)
 
     # Ball bounces off top and bottom
