@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pong · The Arcade · Jason Breedlove</title>
+<meta name="description" content="A classic rivalry, a fresh rally. Play Jason Breedlove’s Python-powered Pong in your browser with keyboard or touch controls.">
+<meta name="theme-color" content="#101323"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><a class="brand" href="https://www.jasonbreedlove.dev">JB <span>/ THE ARCADE</span></a><a href="https://github.com/Breedlove-Jason/pong">View source ↗</a></header>
+<main>
+<section class="intro"><p class="eyebrow">NO. 03 / PONG</p><h1>Keep the<br><em>rally alive.</em></h1><p class="lede">Two paddles. One ball.<br>A rivalry that never gets old.</p><div class="rules"><p class="eyebrow">YOUR SIDE OF THE COURT</p><p>You play on the <strong>left</strong>. First to <strong>7</strong> wins.</p><p><kbd>↑</kbd> <kbd>↓</kbd> or <kbd>W</kbd> <kbd>S</kbd> to move<br><kbd>Space</kbd> to pause · <kbd>R</kbd> to reset</p><p class="muted">On touch screens, drag on the court or hold the buttons below.</p></div><div class="tag">PYTHON × WEBASSEMBLY</div></section>
+<section class="game" aria-label="Pong game">
+<div class="scoreboard"><div><span>YOU</span><strong id="you">00</strong></div><div class="match-label">FIRST TO 7<span>THE CLASSIC MATCHUP</span></div><div class="opponent"><span>COMPUTER</span><strong id="computer">00</strong></div></div>
+<div class="court"><canvas id="board" width="900" height="540" tabindex="0" aria-label="Pong court. Use up and down arrows or W and S to move your left paddle."></canvas><div id="overlay"><p class="eyebrow" id="overlay-label">THE COURT IS YOURS</p><h2 id="overlay-title">Meet your match.</h2><p id="overlay-text">A little timing goes a long way.</p></div></div>
+<div class="stats"><span>RALLY <b id="rally">0</b></span><span>BEST THIS MATCH <b id="best">0</b></span></div>
+<p id="status" role="status">Loading Python. The first visit may take a moment.</p>
+<div class="controls"><button id="start" class="primary" disabled>Loading…</button><button id="pause" disabled>Pause</button><button id="reset" disabled>Reset</button><div class="touch-controls"><button data-axis="-1" aria-label="Move paddle up">↑</button><button data-axis="1" aria-label="Move paddle down">↓</button></div></div>
+</section>
+</main>
+<footer><span>A classic, re-played. Built by Jason Breedlove.</span><a href="https://www.jasonbreedlove.dev/#projects">Back to the portfolio ↗</a></footer>
+<script type="module" src="app.js"></script>
+</body></html>

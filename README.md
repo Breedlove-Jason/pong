@@ -1,29 +1,45 @@
-<div style="text-align: center">
-<h1> Pong Game</h1>
-</div>
+# Pong · The Arcade
 
-## Description
+Jason Breedlove’s Python Pong, playable on desktop and in a browser. The original Turtle project is preserved in `legacy_turtle/app.py`.
 
-The Pong Game project is a classic implementation of the Pong game using the Turtle graphics library in Python. The game includes two paddles and a ball. The left paddle is controlled by the computer, and the right paddle is controlled by the player. The goal is to score points by getting the ball past the opponent's paddle.
+## Play
 
-## How to Play
+You control the left paddle; the computer plays on the right. First to seven wins.
 
-1. Run the `main.py` script.
-2. Use the arrow keys to control the right paddle:
-    - Up: Move up
-    - Down: Move down
-3. The computer controls the left paddle.
-4. The game ends when the ball goes past the paddles, and the score is updated.
+- **↑ / ↓** or **W / S**: move
+- **Space**: start or pause
+- **R**: reset
+- **Browser touch**: drag on the court or hold the arrow buttons
 
-## Files
+The ball accelerates with each return; hitting near a paddle edge changes its angle. The computer has a limited movement speed. Browser play pauses when focus leaves the court or the tab becomes hidden.
 
-- `main.py`: The main script that runs the Pong game.
+## Python, in both places
 
-## Running the Project
+`engine.py` owns movement, collisions, scoring, the opponent, and match state. `app.py` renders it using Turtle. The browser loads that same engine with Pyodide (Python/WebAssembly); JavaScript handles canvas drawing and input, with a fixed physics timestep.
 
-To run the project, navigate to the `pong-game` directory and execute the `main.py` script using Python:
+### Desktop
 
-```bash
-cd pong-game
-python main.py
+```sh
+python app.py
 ```
+
+Python 3 and Tk/Turtle are required. No third-party Python packages are needed.
+
+### Browser
+
+```sh
+npm run build
+python3 -m http.server 8000 --directory dist
+```
+
+Open http://localhost:8000. The first load downloads Pyodide from jsDelivr and requires internet access. Fonts fall back to system fonts if Google Fonts is unavailable.
+
+### Tests
+
+```sh
+python3 -m unittest discover -s tests -v
+```
+
+### Vercel
+
+Import this repository. Use **Other** as the framework preset, `npm run build` as the build command, and `dist` as output. `vercel.json` supplies those settings. No environment variables, database, or Python server are required. The intended custom domain is `pong.jasonbreedlove.dev`.
