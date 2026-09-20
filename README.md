@@ -1,6 +1,12 @@
+![Python Pong — KEEP THE RALLY ALIVE](docs/project-banner.svg)
+
+[Open live app](https://pong.jasonbreedlove.dev) · [Portfolio](https://www.jasonbreedlove.dev) · [Browse source](https://github.com/Breedlove-Jason/pong)
+
 <div style="text-align: center">
 <h1> Pong Game</h1>
 </div>
+
+> **Browser edition:** The deployed Arcade version lives on [feat/arcade-browser](https://github.com/Breedlove-Jason/pong/tree/feat/arcade-browser). This default branch preserves the original Turtle implementation documented below.
 
 ## Description
 
